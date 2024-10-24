@@ -1,0 +1,208 @@
+/* Diclaring some global variables of this CSS file */
+:root{
+  --padVal:15px;
+  --margVal:10px;
+  font-family: none;
+}
+
+body{
+  display: block !important;
+}
+.App {
+  text-align: center;
+  line-height: normal;
+}
+
+h1{
+  color: #007bff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* The "optFun-div" class (which holds all the display-cards) is declared as a horizontal flex */
+.optFun-div{
+  display:flex;
+  flex-direction: row;
+  text-align: center;
+  background: #007bff;
+  width:100%;
+  padding: var(--padVal) 0px;
+  margin: var(--margVal) 0px;
+  justify-content: space-around;
+}
+
+/* The "each-card-div" class which represents a display-card is declared as vertical flex */
+.each-card-div{
+  display:flex;
+  flex-direction: column;
+  width: 300px;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+  border:10px solid #007bff;
+  border-radius: 2rem;
+  margin: 0.75rem 0rem;
+  padding: var(--padVal);
+  
+}
+
+/* Styling for ul inside display-card  */
+.features-listing-ul{
+  text-align: center;
+  padding: var(--padVal) 0px;
+}
+
+/* Styling for each list-item (li) inside ul */
+.features-listing-li{
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+/* Styling for button */
+.each-card-button{
+  background-color: #007bff;
+  color: white;
+  width: 80%;
+  text-align: center;
+  border:none;
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+
+/* Styling for the horizontal line (hr) */
+.each-card-hr {
+  margin: 0.8rem 0;
+  color:black;
+  height:1px;
+  width: 90%;
+}
+
+
+/* Styling for the <p> tag which displays name of the plan */
+.opt-name-p{
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  opacity: 0.2;
+}
+
+/* Styling for the <span> tag which displays the price-value of the plan */
+.opt-price-span{
+  font-size: 3rem;
+  margin: 0;
+}
+
+/* Styling for <p> tag which displays the duration per which is the price for */
+.opt-price-p{
+  font-size: 0.8rem;
+}
+
+
+
+/* Adding marking as "✔" for all the list-items (li) on all the three display-cards (1 to 3) */
+.optFun-div .each-card-div:nth-child(n) .features-listing-ul li:nth-child(n)::marker{
+  content:"✔  ";
+}
+
+/* Adding marking as "✖" to the list-items (li- 5 to 8) of the first display-card */
+.optFun-div .each-card-div:nth-child(1) .features-listing-ul li:nth-child(n+5)::marker{
+  content:"✖  ";
+}
+
+/* Adding opacity to the list-items (li- 5 to 8) of the first display-card */
+.optFun-div .each-card-div:nth-child(1) .features-listing-ul li:nth-child(n+5){
+  opacity:0.3;
+}
+
+/* Adding marking as "✖" to the eight list-item (li-8) of the second display-card */
+.optFun-div .each-card-div:nth-child(2) .features-listing-ul li:nth-child(8)::marker{
+  content:"✖  ";
+}
+
+/* Adding opacity to the eight list-item (li-8) of the second display-card */
+.optFun-div .each-card-div:nth-child(2) .features-listing-ul li:nth-child(8){
+  opacity:0.3;
+}
+
+
+/* Making the first list-item (li-1) of all the display-cards as bold */
+.optFun-div .each-card-div:nth-child(n) .features-listing-ul li:nth-child(1){
+  font-weight:bold;
+}
+
+/* Making the first list-item (li-1) of the first  display-card as normal again */
+.optFun-div .each-card-div:nth-child(1) .features-listing-ul li:nth-child(1){
+  font-weight:normal;
+}
+
+/* Making the first word (which is kept in a span tag) of seventh list-item (li-7) of the third display-card as bold */
+.optFun-div .each-card-div:nth-child(3) .features-listing-ul li:nth-child(7) span{
+  font-weight:bold;
+}
+
+
+
+
+/* Applying media-query for different widths of the screen */
+
+/* Media-query-1 for width > 980px */
+@media(min-width:980px){
+  /* Adding hovering effects w(when the display-card is hovered */
+  
+  /* Removing opacity for the button when the display-card is hovered */
+  .each-card-div:hover .each-card-button{
+    opacity: 1;
+  }
+  
+  /* Changing the top and bottom margins of display-card when it is hovered */
+  .each-card-div:hover{
+    margin-top: -0.25rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+
+/* Media-query-2 for 650px< width < 980px */
+@media (min-width: 650px) and (max-width: 980px) {
+
+  /* In this width range displaying in vertical flex */
+  .optFun-div{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .each-card-div{
+    width: 50%; 
+    margin: 1rem;
+  }
+  .each-card-button{
+    opacity: 1;
+  }
+}
+
+
+/* Media-query-3 for width < 650px */
+@media (max-width:650px){
+
+  /* In this width range displaying in vertical flex */
+  .optFun-div{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .each-card-div{
+    width: 70%;
+    margin: 1rem;
+  }
+  .each-card-button{
+    opacity: 1;
+  }
+}
