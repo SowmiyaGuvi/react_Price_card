@@ -14,7 +14,7 @@ body{
 }
 
 h1{
-  color: #007bff;
+  color: #7614af;
   font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -23,10 +23,9 @@ h1{
   display:flex;
   flex-direction: row;
   text-align: center;
-  background: #007bff;
+  margin : 20px;
   width:100%;
   padding: var(--padVal) 0px;
-  margin: var(--margVal) 0px;
   justify-content: space-around;
 }
 
@@ -35,16 +34,22 @@ h1{
   display:flex;
   flex-direction: column;
   width: 300px;
+  color: #fff;
   text-align: center;
   align-items: center;
-  background-color: white;
-  border:10px solid #007bff;
+  background: linear-gradient(109.6deg, rgb(78, 62, 255) 11.2%, rgb(164, 69, 255) 91.1%);
   border-radius: 2rem;
   margin: 0.75rem 0rem;
   padding: var(--padVal);
+  transition: transform .2s;
   
 }
-
+.each-card-div:hover{
+  transform: scale(1.1);
+}
+.each-card-div:hover .each-card-button{
+  background-color: aqua;
+}
 /* Styling for ul inside display-card  */
 .features-listing-ul{
   text-align: center;
@@ -59,9 +64,9 @@ h1{
 
 /* Styling for button */
 .each-card-button{
-  background-color: #007bff;
-  color: white;
-  width: 80%;
+  background-color: #ffff;
+  color: black;
+  width: 50%;
   text-align: center;
   border:none;
   font-size: 80%;
@@ -87,7 +92,7 @@ h1{
   font-size: 0.9rem;
   letter-spacing: .1rem;
   font-weight: bold;
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 /* Styling for the <span> tag which displays the price-value of the plan */
@@ -115,7 +120,7 @@ h1{
 
 /* Adding opacity to the list-items (li- 5 to 8) of the first display-card */
 .optFun-div .each-card-div:nth-child(1) .features-listing-ul li:nth-child(n+5){
-  opacity:0.3;
+  opacity:0.4;
 }
 
 /* Adding marking as "✖" to the eight list-item (li-8) of the second display-card */
@@ -125,7 +130,7 @@ h1{
 
 /* Adding opacity to the eight list-item (li-8) of the second display-card */
 .optFun-div .each-card-div:nth-child(2) .features-listing-ul li:nth-child(8){
-  opacity:0.3;
+  opacity:0.4;
 }
 
 

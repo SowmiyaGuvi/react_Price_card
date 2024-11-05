@@ -5,7 +5,7 @@ function App() {
 
   return (
    <div className="App">
-    <h1>React Price Card Task</h1>
+    <h1>React Price Card</h1>
     <OptionsFun />
    </div>
   );
